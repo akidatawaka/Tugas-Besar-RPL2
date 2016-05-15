@@ -8,27 +8,25 @@
         android:label="Ayo Tebak"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
-            android:name="com.rpl.tugas.tugas_rpl2.SplashScreen"
+            android:name=".SplashScreen"
             android:label="Ayo Tebak"
-            android:theme="@style/SplashScreen"
+            android:noHistory="true"
             android:screenOrientation="portrait"
-            android:noHistory="true">
-
+            android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name="com.rpl.tugas.tugas_rpl2.MainActivity"
-
-            android:label="Ayo Tebak">
-
-        </activity>
+            android:name=".MainActivity"
+            android:label="Ayo Tebak" />
+        <activity android:name=".PermainanActivity" />
+        <activity
+            android:name=".PengaturanActivity"
+            android:label="@string/title_activity_pengaturan"></activity>
     </application>
 
 </manifest>

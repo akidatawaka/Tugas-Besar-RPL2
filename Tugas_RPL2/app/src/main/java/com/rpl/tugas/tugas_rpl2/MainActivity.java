@@ -1,5 +1,6 @@
 package com.rpl.tugas.tugas_rpl2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         final Animation animScale = AnimationUtils.loadAnimation(this, R.anim.anim_scale);
 
 
-        ImageButton btnZoom = (ImageButton) findViewById(R.id.button_main);
+        final ImageButton btnZoom = (ImageButton) findViewById(R.id.button_main);
         ImageButton btnZoom2 = (ImageButton) findViewById(R.id.button_pengaturan);
 
 
@@ -26,15 +27,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 v.startAnimation(animScale);
+                Intent intent = new Intent(MainActivity.this,PermainanActivity.class);
+                startActivity(intent);
             }});
 
         btnZoom2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 v.startAnimation(animScale);
+                Intent intent = new Intent(MainActivity.this,PengaturanActivity.class);
+                startActivity(intent);
             }});
-
-
-
     }
+
+
+
+
+
 }
