@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.rpl.tugas.tugas_rpl2.PermainanActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="&lt; Kembali"
+        android:id="@+id/btn_kembali"
+        android:clickable="true"
+        android:textColor="@color/colorAccent"
+        android:textSize="22dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:typeface="sans" />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New ToggleButton"
+        android:id="@+id/toggleButton"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="484dp"
+        android:layout_marginStart="484dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Soal"
+        android:id="@+id/txtSoal"
+        android:textColor="@color/colorAccent"
+        android:textSize="28dp"
+        android:typeface="sans"
+        android:layout_marginTop="53dp"
+        android:layout_below="@+id/btn_kembali"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="50dp"
+        android:textAlignment="center"
+        android:textIsSelectable="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_jawaban"
+        android:hint="Masukkan Jawaban"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/toggleButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="34dp"
+        android:layout_marginEnd="34dp"
+        android:layout_alignLeft="@+id/btn_kembali"
+        android:layout_alignStart="@+id/btn_kembali"
+        android:typeface="sans"
+        android:textStyle="normal"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jawab"
+        android:id="@+id/btn_jawab"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginStart="37dp"
+        android:layout_below="@+id/editText_jawaban"
+        android:layout_alignLeft="@+id/editText_jawaban"
+        android:layout_alignStart="@+id/editText_jawaban" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Petunjuk"
+        android:id="@+id/btn_petunjuk"
+        android:layout_alignTop="@+id/btn_jawab"
+        android:layout_toRightOf="@+id/btn_jawab"
+        android:layout_toEndOf="@+id/btn_jawab"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp" />
+
+</RelativeLayout>
