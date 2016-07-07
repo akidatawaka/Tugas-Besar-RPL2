@@ -36,6 +36,10 @@ import java.util.concurrent.ExecutionException;
 public class PermainanActivity extends AppCompatActivity {
     ArrayList<HashMap<String, String>> ListSoal;
     Integer i = 0;
+    String str_soal;
+    String str_jawaban;
+    String str_petunjuk;
+    String str_no;
 
 
 
@@ -52,6 +56,8 @@ public class PermainanActivity extends AppCompatActivity {
         TextView kembali = (TextView) findViewById(R.id.btn_kembali);
         final TextView soal =  (TextView) findViewById(R.id.txtSoal);
 
+        final TextView no = (TextView) findViewById(R.id.txtnosoal);
+
         //deklarasi textfield
         final EditText jawaban = (EditText)findViewById(R.id.editText_jawaban);
         final String jawabannya = jawaban.getText().toString();
@@ -61,12 +67,13 @@ public class PermainanActivity extends AppCompatActivity {
         Button btn_jawab = (Button) findViewById(R.id.btn_jawab);
         Button btn_petunjuk = (Button) findViewById(R.id.btn_petunjuk);
 
-        final String coba = "umur";
+
 
         //mengubah font
         jawaban.setTypeface(typeface);
         kembali.setTypeface(typeface);
         soal.setTypeface(typeface);
+        no.setTypeface(typeface);
 
 
 
@@ -112,12 +119,15 @@ public class PermainanActivity extends AppCompatActivity {
 
             HashMap<String, String> out = new HashMap<>();
             out = ListSoal.get(i);
-            final String str_soal = out.get("soal");
-            final String str_jawaban = out.get("jawaban");
-            final String str_petunjuk = out.get("petunjuk");
+            str_no = out.get("no");
+            str_soal = out.get("soal");
+            str_jawaban = out.get("jawaban");
+            str_petunjuk = out.get("petunjuk");
            // Toast.makeText(getApplicationContext(), "testing soal : " + str_soal, Toast.LENGTH_SHORT).show();
+            Log.e("====== Soal nomor",str_no);
             Log.e("======",str_soal);
             Log.e("======",str_jawaban);
+            no.setText("Tebakan ke " + str_no);
             soal.setText(str_soal);
 
 /*
@@ -143,7 +153,6 @@ public class PermainanActivity extends AppCompatActivity {
         btn_jawab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                while (!i.equals(2)) {
                     if ((jawaban.getText().toString().toLowerCase()).equals(str_jawaban)) {
                         new AlertDialog.Builder(PermainanActivity.this)
                                 .setTitle("Selamat !")
@@ -153,28 +162,34 @@ public class PermainanActivity extends AppCompatActivity {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         //soal.setText("Alhamdulillah");
+                                        jawaban.setText("");
                                         i++;
                                         HashMap<String, String> out1 = new HashMap<>();
                                         out1 = ListSoal.get(i);
-                                        final String str_soal = out1.get("soal");
-                                        final String str_jawaban = out1.get("jawaban");
-                                        final String str_petunjuk = out1.get("petunjuk");
+                                        str_no = out1.get("no");
+                                        str_soal = out1.get("soal");
+                                        str_jawaban = out1.get("jawaban");
+                                        str_petunjuk = out1.get("petunjuk");
                                         // Toast.makeText(getApplicationContext(), "testing soal : " + str_soal, Toast.LENGTH_SHORT).show();
+                                        Log.e("====== Soal nomor",str_no);
                                         Log.e("======", str_soal);
                                         Log.e("======", str_jawaban);
+                                        no.setText("Tebakan ke " + str_no);
                                         soal.setText(str_soal);
+
                                     }
-                                }).show();
+                                })
+                                .show();
 
                         //Toast.makeText(getApplicationContext(), "Jawaban Anda Benar", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(getApplicationContext(), "Jawaban Kamu Masih Salah", Toast.LENGTH_SHORT).show();
                     }
 
-
+                        jawaban.setText("");
                     // Log.e("======",str_petunjuk); //String str_petunjuk = out.get("petunjuk");
                 }
-            }
+
         });
 
     }

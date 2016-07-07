@@ -43,12 +43,11 @@
         android:textColor="@color/colorAccent"
         android:textSize="28dp"
         android:typeface="sans"
-        android:layout_marginTop="53dp"
-        android:layout_below="@+id/btn_kembali"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="50dp"
         android:textAlignment="center"
-        android:textIsSelectable="true" />
+        android:textIsSelectable="true"
+        android:layout_marginBottom="37dp"
+        android:layout_above="@+id/toggleButton"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -91,5 +90,21 @@
         android:layout_toEndOf="@+id/btn_jawab"
         android:layout_marginLeft="42dp"
         android:layout_marginStart="42dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Tebakan ke -"
+        android:textColor="@color/colorAccent"
+        android:textSize="28dp"
+        android:typeface="sans"
+        android:textAlignment="center"
+        android:textIsSelectable="true"
+        android:layout_below="@+id/btn_kembali"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:id="@+id/txtnosoal"
+        android:clickable="false" />
 
 </RelativeLayout>
