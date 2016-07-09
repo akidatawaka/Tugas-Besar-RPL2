@@ -64,8 +64,8 @@ public class PermainanActivity extends AppCompatActivity {
 
 
         //deklarasi button
-        Button btn_jawab = (Button) findViewById(R.id.btn_jawab);
-        Button btn_petunjuk = (Button) findViewById(R.id.btn_petunjuk);
+        final Button btn_jawab = (Button) findViewById(R.id.btn_jawab);
+        final Button btn_petunjuk = (Button) findViewById(R.id.btn_petunjuk);
 
 
 
@@ -161,22 +161,31 @@ public class PermainanActivity extends AppCompatActivity {
                                 .setPositiveButton("Sip", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
-                                        //soal.setText("Alhamdulillah");
-                                        jawaban.setText("");
+                                        //soal.setText("Alhamdulillah
                                         i++;
-                                        HashMap<String, String> out1 = new HashMap<>();
-                                        out1 = ListSoal.get(i);
-                                        str_no = out1.get("no");
-                                        str_soal = out1.get("soal");
-                                        str_jawaban = out1.get("jawaban");
-                                        str_petunjuk = out1.get("petunjuk");
-                                        // Toast.makeText(getApplicationContext(), "testing soal : " + str_soal, Toast.LENGTH_SHORT).show();
-                                        Log.e("====== Soal nomor",str_no);
-                                        Log.e("======", str_soal);
-                                        Log.e("======", str_jawaban);
-                                        no.setText("Tebakan ke " + str_no);
-                                        soal.setText(str_soal);
 
+                                        //percabanan di soal
+                                        if (i.equals(3)){
+                                            no.setText("");
+                                            btn_jawab.setVisibility(View.GONE);
+                                            btn_petunjuk.setVisibility(View.GONE);
+                                            jawaban.setVisibility(View.GONE);
+                                            soal.setText("Nantikan update soal selanjutnya");
+
+                                        } else {
+                                            HashMap<String, String> out1 = new HashMap<>();
+                                            out1 = ListSoal.get(i);
+                                            str_no = out1.get("no");
+                                            str_soal = out1.get("soal");
+                                            str_jawaban = out1.get("jawaban");
+                                            str_petunjuk = out1.get("petunjuk");
+                                            // Toast.makeText(getApplicationContext(), "testing soal : " + str_soal, Toast.LENGTH_SHORT).show();
+                                            Log.e("====== Soal nomor", str_no);
+                                            Log.e("======", str_soal);
+                                            Log.e("======", str_jawaban);
+                                            no.setText("Tebakan ke " + str_no);
+                                            soal.setText(str_soal);
+                                        }
                                     }
                                 })
                                 .show();
@@ -191,6 +200,8 @@ public class PermainanActivity extends AppCompatActivity {
                 }
 
         });
+
+
 
     }
 

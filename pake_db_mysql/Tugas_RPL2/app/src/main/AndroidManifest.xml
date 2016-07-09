@@ -26,7 +26,13 @@
         <activity
             android:name=".MainActivity"
             android:label="Ayo Tebak" />
-        <activity android:name=".PermainanActivity" />
+        <activity
+            android:name=".PermainanActivity"
+            android:parentActivityName=".MainActivity"
+            />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
 
         <service android:name=".MusicService"
             android:enabled="true"/><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
