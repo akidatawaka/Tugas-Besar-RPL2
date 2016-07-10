@@ -60,7 +60,7 @@ public class PermainanActivity extends AppCompatActivity {
 
         //deklarasi textfield
         final EditText jawaban = (EditText)findViewById(R.id.editText_jawaban);
-        final String jawabannya = jawaban.getText().toString();
+
 
 
         //deklarasi button
@@ -165,12 +165,13 @@ public class PermainanActivity extends AppCompatActivity {
                                         i++;
 
                                         //percabanan di soal
-                                        if (i.equals(3)){
+                                        if (i.equals(2)){
                                             no.setText("");
                                             btn_jawab.setVisibility(View.GONE);
                                             btn_petunjuk.setVisibility(View.GONE);
                                             jawaban.setVisibility(View.GONE);
-                                            soal.setText("Nantikan update soal selanjutnya");
+                                            soal.setText("Selamat ! Kamu baru saja menyelesaikan rangkaian soal ayo tebak. " +
+                                                         "Nantikan update soal selanjutnya yah!");
 
                                         } else {
                                             HashMap<String, String> out1 = new HashMap<>();

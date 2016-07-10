@@ -22,16 +22,16 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <ImageButton
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button_pengaturan"
-        android:background="@null"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Musik: Hidup"
+        android:id="@+id/txt_musik"
+        android:layout_marginBottom="94dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="92dp"
-        android:src="@drawable/button_pengaturan"
-        android:onClick="onClick"/>
+        android:textColor="@android:color/white" />
 
 
 </RelativeLayout>
