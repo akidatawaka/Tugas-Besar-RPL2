@@ -165,7 +165,7 @@ public class PermainanActivity extends AppCompatActivity {
                                         i++;
 
                                         //percabanan di soal
-                                        if (i.equals(2)){
+                                        if (i.equals(14)){
                                             no.setText("");
                                             btn_jawab.setVisibility(View.GONE);
                                             btn_petunjuk.setVisibility(View.GONE);
