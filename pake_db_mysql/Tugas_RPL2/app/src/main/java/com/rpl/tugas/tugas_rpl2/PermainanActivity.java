@@ -1,5 +1,6 @@
 package com.rpl.tugas.tugas_rpl2;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -10,6 +11,8 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -32,6 +35,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
+import android.os.Vibrator;
 
 public class PermainanActivity extends AppCompatActivity {
 
@@ -44,7 +48,7 @@ public class PermainanActivity extends AppCompatActivity {
     String str_petunjuk;
     String str_no;
 
-
+    Vibrator vib;
 
 
     @Override
@@ -199,6 +203,11 @@ public class PermainanActivity extends AppCompatActivity {
 
                         //Toast.makeText(getApplicationContext(), "Jawaban Anda Benar", Toast.LENGTH_SHORT).show();
                     } else {
+                        Animation shake = AnimationUtils.loadAnimation(PermainanActivity.this, R.anim.shake);
+                        jawaban.startAnimation(shake);
+                        vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                        vib.vibrate(300);
+
                         Toast.makeText(getApplicationContext(), "Jawaban Kamu Masih Salah", Toast.LENGTH_SHORT).show();
                     }
 
