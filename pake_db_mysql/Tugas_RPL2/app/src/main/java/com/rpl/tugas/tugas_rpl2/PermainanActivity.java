@@ -34,6 +34,9 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 public class PermainanActivity extends AppCompatActivity {
+
+    private static final String TAG = "PermainanActivity";
+
     ArrayList<HashMap<String, String>> ListSoal;
     Integer i = 0;
     String str_soal;
@@ -80,6 +83,7 @@ public class PermainanActivity extends AppCompatActivity {
         kembali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 Intent intent = new Intent(PermainanActivity.this, MainActivity.class);
                 startActivity(intent);
             }
@@ -124,13 +128,13 @@ public class PermainanActivity extends AppCompatActivity {
             str_jawaban = out.get("jawaban");
             str_petunjuk = out.get("petunjuk");
            // Toast.makeText(getApplicationContext(), "testing soal : " + str_soal, Toast.LENGTH_SHORT).show();
-            Log.e("====== Soal nomor",str_no);
-            Log.e("======",str_soal);
-            Log.e("======",str_jawaban);
+            Log.e("Soal nomor :", str_no);
+            Log.e("Soal       :", str_soal);
+            Log.e("Jawaban    :", str_jawaban);
             no.setText("Tebakan ke " + str_no);
             soal.setText(str_soal);
 
-/*
+            /*
             String str_jawaban = out.get("jawaban");
             Toast.makeText(getApplicationContext(), "testing soal : " + str_jawaban, Toast.LENGTH_SHORT).show();
             jawaban.setText(str_jawaban);  */
@@ -154,6 +158,7 @@ public class PermainanActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                     if ((jawaban.getText().toString().toLowerCase()).equals(str_jawaban)) {
+                        Log.e("Soal ke ", str_no + " Telah Berhasil Dijawab");
                         new AlertDialog.Builder(PermainanActivity.this)
                                 .setTitle("Selamat !")
                                 .setMessage("Jawaban Kamu Benar")
@@ -166,11 +171,12 @@ public class PermainanActivity extends AppCompatActivity {
 
                                         //percabanan di soal
                                         if (i.equals(14)){
+                                            Log.e(TAG,"Semua Soal Telah Berhasil Dijawab");
                                             no.setText("");
                                             btn_jawab.setVisibility(View.GONE);
                                             btn_petunjuk.setVisibility(View.GONE);
                                             jawaban.setVisibility(View.GONE);
-                                            soal.setText("Selamat ! Kamu baru saja menyelesaikan rangkaian soal ayo tebak. " +
+                                            soal.setText("Selamat ! Kamu baru saja menyelesaikan rangkaian soal Ayo Tebak. " +
                                                          "Nantikan update soal selanjutnya yah!");
 
                                         } else {
@@ -181,9 +187,9 @@ public class PermainanActivity extends AppCompatActivity {
                                             str_jawaban = out1.get("jawaban");
                                             str_petunjuk = out1.get("petunjuk");
                                             // Toast.makeText(getApplicationContext(), "testing soal : " + str_soal, Toast.LENGTH_SHORT).show();
-                                            Log.e("====== Soal nomor", str_no);
-                                            Log.e("======", str_soal);
-                                            Log.e("======", str_jawaban);
+                                            Log.e("Soal nomor :", str_no);
+                                            Log.e("Soal       :", str_soal);
+                                            Log.e("Jawaban    :", str_jawaban);
                                             no.setText("Tebakan ke " + str_no);
                                             soal.setText(str_soal);
                                         }
@@ -255,6 +261,13 @@ public class PermainanActivity extends AppCompatActivity {
         return result.toString();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+        Intent intent = new Intent(PermainanActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
 
 }
 

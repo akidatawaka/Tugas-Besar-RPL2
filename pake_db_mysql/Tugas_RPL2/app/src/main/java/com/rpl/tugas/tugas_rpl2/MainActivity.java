@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.os.AsyncTask;
@@ -39,6 +40,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
+import java.util.logging.Handler;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -48,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
     MediaPlayer mp;
     ImageButton btnZoom;
     TextView pengaturan_musik;
+
+    Intent music;
+
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -73,11 +78,12 @@ public class MainActivity extends AppCompatActivity {
 
         pengaturan_musik.setTypeface(typeface);
 
+
+
         //ImageButton btnZoom2 = (ImageButton) findViewById(R.id.button_pengaturan);
 
-        final Intent music = new Intent(getApplicationContext(), MusicService.class);
+        music = new Intent(getApplicationContext(), MusicService.class);
         startService(music);
-
 
 
 
@@ -91,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 v.startAnimation(animScale);
+                finish();
                 Intent intent = new Intent(MainActivity.this, PermainanActivity.class);
                 startActivity(intent);
 
@@ -121,11 +128,19 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
 
 }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        stopService(music);
+        this.finish();
+
+    }
 
     @Override
     protected void onRestart() {

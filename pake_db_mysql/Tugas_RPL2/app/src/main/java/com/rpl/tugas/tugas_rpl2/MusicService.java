@@ -1,13 +1,19 @@
 package com.rpl.tugas.tugas_rpl2;
 
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnErrorListener;
 import android.os.Binder;
+import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 
 /**
@@ -36,6 +42,7 @@ public class MusicService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         player.start();
         return 1;
+
     }
 
     public void onStart(Intent intent, int startId) {
@@ -63,7 +70,13 @@ public class MusicService extends Service {
     public void onLowMemory() {
 
     }
-}
+
+
+
+    }
+
+
+
 
 
 

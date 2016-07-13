@@ -6,6 +6,25 @@
     android:background="@drawable/background"
     tools:context="com.rpl.tugas.tugas_rpl2.PermainanActivity">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jawab"
+        android:id="@+id/btn_jawab"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/editText_jawaban"
+        android:layout_alignRight="@+id/btn_kembali"
+        android:layout_alignEnd="@+id/btn_kembali" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Petunjuk"
+        android:id="@+id/btn_petunjuk"
+        android:layout_alignTop="@+id/btn_jawab"
+        android:layout_alignRight="@+id/editText_jawaban"
+        android:layout_alignEnd="@+id/editText_jawaban" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,8 +54,8 @@
         android:layout_marginStart="484dp" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Soal"
         android:id="@+id/txtSoal"
@@ -45,9 +64,16 @@
         android:typeface="sans"
         android:textAlignment="center"
         android:textIsSelectable="true"
-        android:layout_marginBottom="37dp"
-        android:layout_above="@+id/toggleButton"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/toggleButton"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:layout_marginTop="115dp"
+        android:layout_marginBottom="-20dp"
+        android:singleLine="false"
+        android:cursorVisible="false"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -67,29 +93,6 @@
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="20dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Jawab"
-        android:id="@+id/btn_jawab"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="37dp"
-        android:layout_marginStart="37dp"
-        android:layout_below="@+id/editText_jawaban"
-        android:layout_alignLeft="@+id/editText_jawaban"
-        android:layout_alignStart="@+id/editText_jawaban" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Petunjuk"
-        android:id="@+id/btn_petunjuk"
-        android:layout_alignTop="@+id/btn_jawab"
-        android:layout_toRightOf="@+id/btn_jawab"
-        android:layout_toEndOf="@+id/btn_jawab"
-        android:layout_marginLeft="42dp"
-        android:layout_marginStart="42dp" />
 
     <TextView
         android:layout_width="wrap_content"
