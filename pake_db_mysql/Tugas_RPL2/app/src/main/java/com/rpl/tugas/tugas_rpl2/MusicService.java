@@ -32,7 +32,7 @@ public class MusicService extends Service {
         Log.d("Music Service","Oncreate");
         player = MediaPlayer.create(this, R.raw.soundtrack);
         player.setLooping(true); // Set looping
-        player.setVolume(100,100);
+        player.setVolume(80,80);
         player.start();
         Log.d("Music Service","OnCreate Play");
     }

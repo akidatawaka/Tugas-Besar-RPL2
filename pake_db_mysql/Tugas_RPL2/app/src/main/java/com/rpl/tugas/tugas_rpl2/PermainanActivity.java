@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethod;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -50,6 +52,8 @@ public class PermainanActivity extends AppCompatActivity {
 
     Vibrator vib;
 
+    //InputMethodManager inputManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,13 +72,9 @@ public class PermainanActivity extends AppCompatActivity {
         //deklarasi textfield
         final EditText jawaban = (EditText)findViewById(R.id.editText_jawaban);
 
-
-
         //deklarasi button
         final Button btn_jawab = (Button) findViewById(R.id.btn_jawab);
         final Button btn_petunjuk = (Button) findViewById(R.id.btn_petunjuk);
-
-
 
         //mengubah font
         jawaban.setTypeface(typeface);
@@ -82,6 +82,17 @@ public class PermainanActivity extends AppCompatActivity {
         soal.setTypeface(typeface);
         no.setTypeface(typeface);
 
+       /* //pengaturan keyboard
+        inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
+
+        //mencoba mematikan tombol jawab
+
+        while (jawaban.getText().toString().equals("")){
+            btn_jawab.setEnabled(false);
+        } else {
+            btn_jawab.setEnabled(true);
+        } */
 
 
         kembali.setOnClickListener(new View.OnClickListener() {
@@ -151,9 +162,6 @@ public class PermainanActivity extends AppCompatActivity {
             }
 
         });
-
-
-
 
 
 
